@@ -1,0 +1,26 @@
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\USB IR Toy v2\bin\Debug\USB IR Toy v2.exe.config
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\USB IR Toy v2\bin\Debug\USB IR Toy v2.exe
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\USB IR Toy v2\bin\Debug\USB IR Toy v2.pdb
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\USB IR Toy v2\bin\Debug\USBIRToyV2.dll
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\USB IR Toy v2\bin\Debug\USBIRToyV2.pdb
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\USB IR Toy v2\obj\Debug\USBIRToyv2.DBAddRemote.resources
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\USB IR Toy v2\obj\Debug\USBIRToyv2.DBMenu.resources
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\USB IR Toy v2\obj\Debug\USBIRToyv2.Form1.resources
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\USB IR Toy v2\obj\Debug\USBIRToyv2 Manager.csproj.GenerateResource.Cache
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\USB IR Toy v2\obj\Debug\USB IR Toy v2.exe
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\USB IR Toy v2\obj\Debug\USB IR Toy v2.pdb
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\USB IR Toy v2\obj\Debug\USBIRToyv2.DBAddKey.resources
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\USB IR Toy v2\obj\Debug\USBIRToyv2 Manager.csprojResolveAssemblyReference.cache
+\\pickles\d\Software\mce\USB IR Toy v2\USB IR Toy v2\bin\Debug\USB IR Toy v2.exe.config
+\\pickles\d\Software\mce\USB IR Toy v2\USB IR Toy v2\bin\Debug\USB IR Toy v2.exe
+\\pickles\d\Software\mce\USB IR Toy v2\USB IR Toy v2\bin\Debug\USB IR Toy v2.pdb
+\\pickles\d\Software\mce\USB IR Toy v2\USB IR Toy v2\bin\Debug\USBIRToyV2.dll
+\\pickles\d\Software\mce\USB IR Toy v2\USB IR Toy v2\bin\Debug\USBIRToyV2.pdb
+\\pickles\d\Software\mce\USB IR Toy v2\USB IR Toy v2\obj\Debug\USBIRToyV2 Manager.csprojResolveAssemblyReference.cache
+\\pickles\d\Software\mce\USB IR Toy v2\USB IR Toy v2\obj\Debug\USBIRToyv2.DBAddKey.resources
+\\pickles\d\Software\mce\USB IR Toy v2\USB IR Toy v2\obj\Debug\USBIRToyv2.DBAddRemote.resources
+\\pickles\d\Software\mce\USB IR Toy v2\USB IR Toy v2\obj\Debug\USBIRToyv2.DBMenu.resources
+\\pickles\d\Software\mce\USB IR Toy v2\USB IR Toy v2\obj\Debug\USBIRToyv2.Form1.resources
+\\pickles\d\Software\mce\USB IR Toy v2\USB IR Toy v2\obj\Debug\USBIRToyV2 Manager.csproj.GenerateResource.Cache
+\\pickles\d\Software\mce\USB IR Toy v2\USB IR Toy v2\obj\Debug\USB IR Toy v2.exe
+\\pickles\d\Software\mce\USB IR Toy v2\USB IR Toy v2\obj\Debug\USB IR Toy v2.pdb

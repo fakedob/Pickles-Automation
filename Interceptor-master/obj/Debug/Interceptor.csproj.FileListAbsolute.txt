@@ -1,0 +1,30 @@
+C:\Users\Jason\Documents\Programming\Projects\C#\Enterprise\Interceptor\Interceptor\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Jason\Documents\Programming\Projects\C#\Enterprise\Interceptor\Interceptor\bin\Debug\Interceptor.dll
+C:\Users\Jason\Documents\Programming\Projects\C#\Enterprise\Interceptor\Interceptor\bin\Debug\Interceptor.pdb
+C:\Users\Jason\Documents\Programming\Projects\C#\Enterprise\Interceptor\Interceptor\obj\Debug\Interceptor.dll
+C:\Users\Jason\Documents\Programming\Projects\C#\Enterprise\Interceptor\Interceptor\obj\Debug\Interceptor.pdb
+D:\Code\Interceptor\Interceptor\obj\Debug\Interceptor.csprojResolveAssemblyReference.cache
+D:\Code\Interceptor\Interceptor\obj\Debug\Interceptor.dll
+D:\Code\Interceptor\Interceptor\bin\Debug\Interceptor.dll
+D:\Code\Interceptor\Interceptor\bin\Debug\Interceptor.pdb
+D:\Code\Interceptor\Interceptor\obj\Debug\Interceptor.pdb
+D:\Service Template\Interceptor-master\bin\Debug\Interceptor.dll
+D:\Service Template\Interceptor-master\bin\Debug\Interceptor.pdb
+D:\Service Template\Interceptor-master\obj\Debug\Interceptor.csprojResolveAssemblyReference.cache
+D:\Service Template\Interceptor-master\obj\Debug\Interceptor.dll
+D:\Service Template\Interceptor-master\obj\Debug\Interceptor.pdb
+C:\Users\edyna_000.HP-250\Desktop\mce\Interceptor-master\bin\Debug\Interceptor.dll
+C:\Users\edyna_000.HP-250\Desktop\mce\Interceptor-master\bin\Debug\Interceptor.pdb
+C:\Users\edyna_000.HP-250\Desktop\mce\Interceptor-master\obj\Debug\Interceptor.csprojResolveAssemblyReference.cache
+C:\Users\edyna_000.HP-250\Desktop\mce\Interceptor-master\obj\Debug\Interceptor.dll
+C:\Users\edyna_000.HP-250\Desktop\mce\Interceptor-master\obj\Debug\Interceptor.pdb
+\\192.168.1.2\d\Software\mce\Pickles\Interceptor-master\bin\Debug\Interceptor.dll
+\\192.168.1.2\d\Software\mce\Pickles\Interceptor-master\bin\Debug\Interceptor.pdb
+\\192.168.1.2\d\Software\mce\Pickles\Interceptor-master\obj\Debug\Interceptor.csprojResolveAssemblyReference.cache
+\\192.168.1.2\d\Software\mce\Pickles\Interceptor-master\obj\Debug\Interceptor.dll
+\\192.168.1.2\d\Software\mce\Pickles\Interceptor-master\obj\Debug\Interceptor.pdb
+\\pickles\d\Software\mce\USB IR Toy v2\Interceptor-master\bin\Debug\Interceptor.dll
+\\pickles\d\Software\mce\USB IR Toy v2\Interceptor-master\bin\Debug\Interceptor.pdb
+\\pickles\d\Software\mce\USB IR Toy v2\Interceptor-master\obj\Debug\Interceptor.csprojResolveAssemblyReference.cache
+\\pickles\d\Software\mce\USB IR Toy v2\Interceptor-master\obj\Debug\Interceptor.dll
+\\pickles\d\Software\mce\USB IR Toy v2\Interceptor-master\obj\Debug\Interceptor.pdb

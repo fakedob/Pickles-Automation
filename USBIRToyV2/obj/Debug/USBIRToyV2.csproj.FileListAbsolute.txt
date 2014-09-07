@@ -1,0 +1,9 @@
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\USBIRToyV2\bin\Debug\USBIRToyV2.dll
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\USBIRToyV2\bin\Debug\USBIRToyV2.pdb
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\USBIRToyV2\obj\Debug\USBIRToyV2.csprojResolveAssemblyReference.cache
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\USBIRToyV2\obj\Debug\USBIRToyV2.dll
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\USBIRToyV2\obj\Debug\USBIRToyV2.pdb
+\\pickles\d\Software\mce\USB IR Toy v2\USBIRToyV2\bin\Debug\USBIRToyV2.dll
+\\pickles\d\Software\mce\USB IR Toy v2\USBIRToyV2\bin\Debug\USBIRToyV2.pdb
+\\pickles\d\Software\mce\USB IR Toy v2\USBIRToyV2\obj\Debug\USBIRToyV2.dll
+\\pickles\d\Software\mce\USB IR Toy v2\USBIRToyV2\obj\Debug\USBIRToyV2.pdb

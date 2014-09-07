@@ -1,0 +1,38 @@
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\WMC Manager\obj\Debug\WMC Manager.csprojResolveAssemblyReference.cache
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\WMC Manager\obj\Debug\WMC_Manager.Form1.resources
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\WMC Manager\obj\Debug\WMC_Manager.Properties.Resources.resources
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\WMC Manager\obj\Debug\WMC Manager.csproj.GenerateResource.Cache
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\WMC Manager\bin\Debug\WMC Manager.exe.config
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\WMC Manager\bin\Debug\WMC Manager.exe
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\WMC Manager\bin\Debug\WMC Manager.pdb
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\WMC Manager\bin\Debug\USBIRToyV2.dll
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\WMC Manager\bin\Debug\MemMapFile.dll
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\WMC Manager\bin\Debug\USBIRToyV2.pdb
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\WMC Manager\obj\Debug\WMC Manager.exe
+D:\Visual Studio\IR stuff\USB IR Toy v2\USB IR Toy v2\WMC Manager\obj\Debug\WMC Manager.pdb
+\\192.168.1.2\d\Software\mce\USB IR Toy v2\WMC Manager\bin\Debug\WMC Manager.exe
+\\192.168.1.2\d\Software\mce\USB IR Toy v2\WMC Manager\bin\Debug\USBIRToyV2.dll
+\\192.168.1.2\d\Software\mce\USB IR Toy v2\WMC Manager\bin\Debug\Interceptor.dll
+\\192.168.1.2\d\Software\mce\USB IR Toy v2\WMC Manager\bin\Debug\CoreAudioApi.dll
+\\pickles\d\Software\mce\USB IR Toy v2\WMC Manager\bin\Debug\WMC Manager.exe.config
+\\pickles\d\Software\mce\USB IR Toy v2\WMC Manager\obj\Debug\WMC Manager.exe
+\\pickles\d\Software\mce\USB IR Toy v2\WMC Manager\obj\Debug\WMC Manager.pdb
+\\pickles\d\Software\mce\USB IR Toy v2\WMC Manager\bin\Debug\WMC Manager.exe
+\\pickles\d\Software\mce\USB IR Toy v2\WMC Manager\bin\Debug\WMC Manager.pdb
+\\pickles\d\Software\mce\USB IR Toy v2\WMC Manager\bin\Debug\CoreAudioApi.dll
+\\pickles\d\Software\mce\USB IR Toy v2\WMC Manager\bin\Debug\Interceptor.dll
+\\pickles\d\Software\mce\USB IR Toy v2\WMC Manager\bin\Debug\Renci.SshNet.dll
+\\pickles\d\Software\mce\USB IR Toy v2\WMC Manager\bin\Debug\USBIRToyV2.dll
+\\pickles\d\Software\mce\USB IR Toy v2\WMC Manager\bin\Debug\CoreAudioApi.pdb
+\\pickles\d\Software\mce\USB IR Toy v2\WMC Manager\bin\Debug\Interceptor.pdb
+\\pickles\d\Software\mce\USB IR Toy v2\WMC Manager\bin\Debug\Renci.SshNet.pdb
+\\pickles\d\Software\mce\USB IR Toy v2\WMC Manager\bin\Debug\Renci.SshNet.xml
+\\pickles\d\Software\mce\USB IR Toy v2\WMC Manager\bin\Debug\USBIRToyV2.pdb
+\\pickles\d\Software\mce\USB IR Toy v2\WMC Manager\obj\Debug\WMC Manager.csprojResolveAssemblyReference.cache
+\\pickles\d\Software\mce\USB IR Toy v2\WMC Manager\obj\Debug\WMC_Manager.Form1.resources
+\\pickles\d\Software\mce\USB IR Toy v2\WMC Manager\obj\Debug\WMC_Manager.OSD.resources
+\\pickles\d\Software\mce\USB IR Toy v2\WMC Manager\obj\Debug\WMC_Manager.Properties.Resources.resources
+\\pickles\d\Software\mce\USB IR Toy v2\WMC Manager\obj\Debug\WMC Manager.csproj.GenerateResource.Cache
+\\192.168.1.2\d\Software\mce\USB IR Toy v2\WMC Manager\bin\Debug\Emgu.CV.dll
+\\192.168.1.2\d\Software\mce\USB IR Toy v2\WMC Manager\bin\Debug\Emgu.Util.dll
+\\192.168.1.2\d\Software\mce\USB IR Toy v2\WMC Manager\bin\Debug\WMC Manager.exe.config

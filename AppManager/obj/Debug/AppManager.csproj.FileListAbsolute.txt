@@ -1,0 +1,5 @@
+\\pickles\d\Software\mce\USB IR Toy v2\AppManager\bin\Debug\AppManager.exe
+\\pickles\d\Software\mce\USB IR Toy v2\AppManager\bin\Debug\AppManager.pdb
+\\pickles\d\Software\mce\USB IR Toy v2\AppManager\obj\Debug\AppManager.csprojResolveAssemblyReference.cache
+\\pickles\d\Software\mce\USB IR Toy v2\AppManager\obj\Debug\AppManager.exe
+\\pickles\d\Software\mce\USB IR Toy v2\AppManager\obj\Debug\AppManager.pdb
