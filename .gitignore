@@ -9,6 +9,7 @@ Desktop.ini
 $RECYCLE.BIN/
 obj
 bin
+x64
 
 # Windows Installer files
 *.cab
@@ -16,6 +17,7 @@ bin
 *.msm
 *.msp
 *.cache
+EventLog.txt
 
 # =========================
 # Operating System Files
