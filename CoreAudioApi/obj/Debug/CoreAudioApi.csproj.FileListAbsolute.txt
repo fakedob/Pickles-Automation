@@ -1,4 +1,0 @@
-\\pickles\d\Software\mce\USB IR Toy v2\CoreAudioApi\bin\Debug\CoreAudioApi.dll
-\\pickles\d\Software\mce\USB IR Toy v2\CoreAudioApi\bin\Debug\CoreAudioApi.pdb
-\\pickles\d\Software\mce\USB IR Toy v2\CoreAudioApi\obj\Debug\CoreAudioApi.dll
-\\pickles\d\Software\mce\USB IR Toy v2\CoreAudioApi\obj\Debug\CoreAudioApi.pdb
