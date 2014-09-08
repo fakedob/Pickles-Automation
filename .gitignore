@@ -17,7 +17,6 @@ x64
 *.msm
 *.msp
 *.cache
-*.pdb
 EventLog.txt
 
 # =========================
@@ -41,3 +40,4 @@ Icon
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+*.pdb
