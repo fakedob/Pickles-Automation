@@ -44,9 +44,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="USBIRToyV2">
-      <HintPath>..\USBIRToyV2\bin\Debug\USBIRToyV2.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBEdit\DBAddKey.cs">
@@ -90,6 +87,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\USBIRToyV2\USBIRToyV2.csproj">
+      <Project>{0f21f5c4-18b7-42b8-b41e-1060cdca511f}</Project>
+      <Name>USBIRToyV2</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
