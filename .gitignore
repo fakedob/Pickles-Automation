@@ -17,6 +17,7 @@ x64
 *.msm
 *.msp
 *.cache
+*.pdb
 EventLog.txt
 
 # =========================

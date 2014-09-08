@@ -163,6 +163,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "icons", "icons", "{B9074E7A
 		Build\Icons\Xcode.ico = Build\Icons\Xcode.ico
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MCE Icons", "MCE Icons", "{8A66D13C-58F5-4991-B9B5-DA8160F00F24}"
+	ProjectSection(SolutionItems) = preProject
+		MCE App Icons\Blu_ray_logo.png = MCE App Icons\Blu_ray_logo.png
+		MCE App Icons\hbo-go.png = MCE App Icons\hbo-go.png
+		MCE App Icons\skype-logo-feb_2012_rgb_500.png = MCE App Icons\skype-logo-feb_2012_rgb_500.png
+		MCE App Icons\start_menu.png = MCE App Icons\start_menu.png
+		MCE App Icons\youtube_products_sm.jpg = MCE App Icons\youtube_products_sm.jpg
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -228,6 +237,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{2D8DCA29-C360-4111-B25E-D2D492699173} = {C6FE1210-CA10-4200-9053-C8B8B798FE9E}
 		{6DE6D5B5-C1D5-458D-83E1-7091BC718889} = {C6FE1210-CA10-4200-9053-C8B8B798FE9E}
+		{8A66D13C-58F5-4991-B9B5-DA8160F00F24} = {C6FE1210-CA10-4200-9053-C8B8B798FE9E}
 		{66FBE15D-CA62-408D-96D8-6D3FE11114A4} = {6DE6D5B5-C1D5-458D-83E1-7091BC718889}
 		{B9074E7A-6717-44CC-9F4C-351F5A8D7DE8} = {6DE6D5B5-C1D5-458D-83E1-7091BC718889}
 	EndGlobalSection

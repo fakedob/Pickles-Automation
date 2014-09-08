@@ -391,38 +391,6 @@
             Set the frame rate
             </summary>
         </member>
-        <member name="T:Emgu.CV.UI.ImagePropertyDialog">
-            <summary>
-            A dialog to display the property of an image
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.UI.ImagePropertyDialog.#ctor(Emgu.CV.UI.ImageBox)">
-            <summary>
-            Constructor
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.UI.ImagePropertyDialog.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.UI.ImagePropertyDialog.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:Emgu.CV.UI.ImagePropertyDialog.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.UI.ImagePropertyDialog.ImagePropertyControl">
-            <summary>
-            Get the image property panel
-            </summary>
-        </member>
         <member name="T:Emgu.CV.UI.ImageViewer">
             <summary>
             The Image viewer that display IImage
@@ -814,6 +782,38 @@
         <member name="P:Emgu.CV.UI.Properties.StringTable.ZoomOut">
             <summary>
               Looks up a localized string similar to Zoom Out.
+            </summary>
+        </member>
+        <member name="T:Emgu.CV.UI.ImagePropertyDialog">
+            <summary>
+            A dialog to display the property of an image
+            </summary>
+        </member>
+        <member name="M:Emgu.CV.UI.ImagePropertyDialog.#ctor(Emgu.CV.UI.ImageBox)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.UI.ImagePropertyDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Emgu.CV.UI.ImagePropertyDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Emgu.CV.UI.ImagePropertyDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Emgu.CV.UI.ImagePropertyDialog.ImagePropertyControl">
+            <summary>
+            Get the image property panel
             </summary>
         </member>
     </members>
