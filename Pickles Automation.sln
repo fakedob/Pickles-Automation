@@ -24,9 +24,143 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartMenu", "StartMenu\StartMenu.csproj", "{48826C93-767B-44C3-855A-EDE718407A22}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C6FE1210-CA10-4200-9053-C8B8B798FE9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHub", "GitHub", "{2D8DCA29-C360-4111-B25E-D2D492699173}"
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{6DE6D5B5-C1D5-458D-83E1-7091BC718889}"
+	ProjectSection(SolutionItems) = preProject
+		Build\blank.cur = Build\blank.cur
+		Build\Default.irdb = Build\Default.irdb
+		Build\haarcascade_eye.xml = Build\haarcascade_eye.xml
+		Build\haarcascade_frontalface_alt.xml = Build\haarcascade_frontalface_alt.xml
+		Build\haarcascade_frontalface_alt2.xml = Build\haarcascade_frontalface_alt2.xml
+		Build\haarcascade_frontalface_alt_tree.xml = Build\haarcascade_frontalface_alt_tree.xml
+		Build\haarcascade_frontalface_default.xml = Build\haarcascade_frontalface_default.xml
+		Build\haarcascade_frontalface_default2.xml = Build\haarcascade_frontalface_default2.xml
+		Build\MCPopupSend.exe = Build\MCPopupSend.exe
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "media", "media", "{66FBE15D-CA62-408D-96D8-6D3FE11114A4}"
+	ProjectSection(SolutionItems) = preProject
+		Build\media\Alarm01.wav = Build\media\Alarm01.wav
+		Build\media\Alarm02.wav = Build\media\Alarm02.wav
+		Build\media\Alarm03.wav = Build\media\Alarm03.wav
+		Build\media\Alarm04.wav = Build\media\Alarm04.wav
+		Build\media\Alarm05.wav = Build\media\Alarm05.wav
+		Build\media\Alarm06.wav = Build\media\Alarm06.wav
+		Build\media\Alarm07.wav = Build\media\Alarm07.wav
+		Build\media\Alarm08.wav = Build\media\Alarm08.wav
+		Build\media\Alarm09.wav = Build\media\Alarm09.wav
+		Build\media\Alarm10.wav = Build\media\Alarm10.wav
+		Build\media\chimes.wav = Build\media\chimes.wav
+		Build\media\chord.wav = Build\media\chord.wav
+		Build\media\ding.wav = Build\media\ding.wav
+		Build\media\notify.wav = Build\media\notify.wav
+		Build\media\recycle.wav = Build\media\recycle.wav
+		Build\media\Ring01.wav = Build\media\Ring01.wav
+		Build\media\Ring02.wav = Build\media\Ring02.wav
+		Build\media\Ring03.wav = Build\media\Ring03.wav
+		Build\media\Ring04.wav = Build\media\Ring04.wav
+		Build\media\Ring05.wav = Build\media\Ring05.wav
+		Build\media\Ring06.wav = Build\media\Ring06.wav
+		Build\media\Ring07.wav = Build\media\Ring07.wav
+		Build\media\Ring08.wav = Build\media\Ring08.wav
+		Build\media\Ring09.wav = Build\media\Ring09.wav
+		Build\media\Ring10.wav = Build\media\Ring10.wav
+		Build\media\ringout.wav = Build\media\ringout.wav
+		Build\media\tada.wav = Build\media\tada.wav
+		Build\media\Windows Background.wav = Build\media\Windows Background.wav
+		Build\media\Windows Balloon.wav = Build\media\Windows Balloon.wav
+		Build\media\Windows Battery Critical.wav = Build\media\Windows Battery Critical.wav
+		Build\media\Windows Battery Low.wav = Build\media\Windows Battery Low.wav
+		Build\media\Windows Critical Stop.wav = Build\media\Windows Critical Stop.wav
+		Build\media\Windows Default.wav = Build\media\Windows Default.wav
+		Build\media\Windows Ding.wav = Build\media\Windows Ding.wav
+		Build\media\Windows Error.wav = Build\media\Windows Error.wav
+		Build\media\Windows Exclamation.wav = Build\media\Windows Exclamation.wav
+		Build\media\Windows Feed Discovered.wav = Build\media\Windows Feed Discovered.wav
+		Build\media\Windows Foreground.wav = Build\media\Windows Foreground.wav
+		Build\media\Windows Hardware Fail.wav = Build\media\Windows Hardware Fail.wav
+		Build\media\Windows Hardware Insert.wav = Build\media\Windows Hardware Insert.wav
+		Build\media\Windows Hardware Remove.wav = Build\media\Windows Hardware Remove.wav
+		Build\media\Windows Information Bar.wav = Build\media\Windows Information Bar.wav
+		Build\media\Windows Logoff Sound.wav = Build\media\Windows Logoff Sound.wav
+		Build\media\Windows Logon.wav = Build\media\Windows Logon.wav
+		Build\media\Windows Menu Command.wav = Build\media\Windows Menu Command.wav
+		Build\media\Windows Message Nudge.wav = Build\media\Windows Message Nudge.wav
+		Build\media\Windows Minimize.wav = Build\media\Windows Minimize.wav
+		Build\media\Windows Navigation Start.wav = Build\media\Windows Navigation Start.wav
+		Build\media\Windows Notify Calendar.wav = Build\media\Windows Notify Calendar.wav
+		Build\media\Windows Notify Email.wav = Build\media\Windows Notify Email.wav
+		Build\media\Windows Notify Messaging.wav = Build\media\Windows Notify Messaging.wav
+		Build\media\Windows Notify System Generic.wav = Build\media\Windows Notify System Generic.wav
+		Build\media\Windows Notify.wav = Build\media\Windows Notify.wav
+		Build\media\Windows Pop-up Blocked.wav = Build\media\Windows Pop-up Blocked.wav
+		Build\media\Windows Print complete.wav = Build\media\Windows Print complete.wav
+		Build\media\Windows Proximity Connection.wav = Build\media\Windows Proximity Connection.wav
+		Build\media\Windows Proximity Notification.wav = Build\media\Windows Proximity Notification.wav
+		Build\media\Windows Recycle.wav = Build\media\Windows Recycle.wav
+		Build\media\Windows Restore.wav = Build\media\Windows Restore.wav
+		Build\media\Windows Ringin.wav = Build\media\Windows Ringin.wav
+		Build\media\Windows Ringout.wav = Build\media\Windows Ringout.wav
+		Build\media\Windows Shutdown.wav = Build\media\Windows Shutdown.wav
+		Build\media\Windows Startup.wav = Build\media\Windows Startup.wav
+		Build\media\Windows Unlock.wav = Build\media\Windows Unlock.wav
+		Build\media\Windows User Account Control.wav = Build\media\Windows User Account Control.wav
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "icons", "icons", "{B9074E7A-6717-44CC-9F4C-351F5A8D7DE8}"
+	ProjectSection(SolutionItems) = preProject
+		Build\Icons\Activity Monitor.ico = Build\Icons\Activity Monitor.ico
+		Build\Icons\Address Book.ico = Build\Icons\Address Book.ico
+		Build\Icons\Application.ico = Build\Icons\Application.ico
+		Build\Icons\Archive manage.ico = Build\Icons\Archive manage.ico
+		Build\Icons\Audio MIDI Setup.ico = Build\Icons\Audio MIDI Setup.ico
+		Build\Icons\Battery.ico = Build\Icons\Battery.ico
+		Build\Icons\Bluetooth.ico = Build\Icons\Bluetooth.ico
+		Build\Icons\Chess.ico = Build\Icons\Chess.ico
+		Build\Icons\Console.ico = Build\Icons\Console.ico
+		Build\Icons\Dashboard.ico = Build\Icons\Dashboard.ico
+		Build\Icons\DigitalColor Meter.ico = Build\Icons\DigitalColor Meter.ico
+		Build\Icons\Earth.ico = Build\Icons\Earth.ico
+		Build\Icons\Finder.ico = Build\Icons\Finder.ico
+		Build\Icons\Folder Music.ico = Build\Icons\Folder Music.ico
+		Build\Icons\Folder Photo.ico = Build\Icons\Folder Photo.ico
+		Build\Icons\Folder Tools.ico = Build\Icons\Folder Tools.ico
+		Build\Icons\Folder.ico = Build\Icons\Folder.ico
+		Build\Icons\Front Row.ico = Build\Icons\Front Row.ico
+		Build\Icons\Hard Drive.ico = Build\Icons\Hard Drive.ico
+		Build\Icons\Home.ico = Build\Icons\Home.ico
+		Build\Icons\iCal.ico = Build\Icons\iCal.ico
+		Build\Icons\iChat.ico = Build\Icons\iChat.ico
+		Build\Icons\Image Capture.ico = Build\Icons\Image Capture.ico
+		Build\Icons\Intranet.ico = Build\Icons\Intranet.ico
+		Build\Icons\iSync.ico = Build\Icons\iSync.ico
+		Build\Icons\iTunes.ico = Build\Icons\iTunes.ico
+		Build\Icons\Joystick.ico = Build\Icons\Joystick.ico
+		Build\Icons\Keychain Access.ico = Build\Icons\Keychain Access.ico
+		Build\Icons\Laptop.ico = Build\Icons\Laptop.ico
+		Build\Icons\Lock.ico = Build\Icons\Lock.ico
+		Build\Icons\Mac.ico = Build\Icons\Mac.ico
+		Build\Icons\Microphone.ico = Build\Icons\Microphone.ico
+		Build\Icons\Network Utility.ico = Build\Icons\Network Utility.ico
+		Build\Icons\Play.ico = Build\Icons\Play.ico
+		Build\Icons\Podcaste capture.ico = Build\Icons\Podcaste capture.ico
+		Build\Icons\Safari.ico = Build\Icons\Safari.ico
+		Build\Icons\Safe.ico = Build\Icons\Safe.ico
+		Build\Icons\Setting.ico = Build\Icons\Setting.ico
+		Build\Icons\System Preferences.ico = Build\Icons\System Preferences.ico
+		Build\Icons\Terminal.ico = Build\Icons\Terminal.ico
+		Build\Icons\TextEdit.ico = Build\Icons\TextEdit.ico
+		Build\Icons\Time Machine.ico = Build\Icons\Time Machine.ico
+		Build\Icons\Trash Empty.ico = Build\Icons\Trash Empty.ico
+		Build\Icons\Trash Full.ico = Build\Icons\Trash Full.ico
+		Build\Icons\Unlock.ico = Build\Icons\Unlock.ico
+		Build\Icons\Xcode.ico = Build\Icons\Xcode.ico
 	EndProjectSection
 EndProject
 Global
@@ -90,5 +224,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2D8DCA29-C360-4111-B25E-D2D492699173} = {C6FE1210-CA10-4200-9053-C8B8B798FE9E}
+		{6DE6D5B5-C1D5-458D-83E1-7091BC718889} = {C6FE1210-CA10-4200-9053-C8B8B798FE9E}
+		{66FBE15D-CA62-408D-96D8-6D3FE11114A4} = {6DE6D5B5-C1D5-458D-83E1-7091BC718889}
+		{B9074E7A-6717-44CC-9F4C-351F5A8D7DE8} = {6DE6D5B5-C1D5-458D-83E1-7091BC718889}
 	EndGlobalSection
 EndGlobal
