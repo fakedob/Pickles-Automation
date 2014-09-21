@@ -82,11 +82,59 @@
     <Compile Include="Common\FaceDetectManager.cs" />
     <Compile Include="Common\FocusManager.cs" />
     <Compile Include="Common\KeyboardManager.cs" />
+    <Compile Include="Common\MediaKeysManager.cs" />
     <Compile Include="Common\MouseManager.cs" />
     <Compile Include="Common\ScreenSaverManager.cs" />
+    <Compile Include="Common\SpeakerManager.cs" />
     <Compile Include="Common\TaskbarManager.cs" />
     <Compile Include="Common\Validation\ValidationManager.cs" />
     <Compile Include="Common\WindowsSounds.cs" />
+    <Compile Include="CoreAudioAPI\AudioEndpointVolume.cs" />
+    <Compile Include="CoreAudioAPI\AudioEndpointVolumeCallback.cs" />
+    <Compile Include="CoreAudioAPI\AudioEndpointVolumeChannel.cs" />
+    <Compile Include="CoreAudioAPI\AudioEndpointVolumeChannels.cs" />
+    <Compile Include="CoreAudioAPI\AudioEndpointVolumeNotificationDelegate.cs" />
+    <Compile Include="CoreAudioAPI\AudioEndpointVolumeStepInformation.cs" />
+    <Compile Include="CoreAudioAPI\AudioEndPointVolumeVolumeRange.cs" />
+    <Compile Include="CoreAudioAPI\AudioMeterInformation.cs" />
+    <Compile Include="CoreAudioAPI\AudioMeterInformationChannels.cs" />
+    <Compile Include="CoreAudioAPI\AudioSessionControl.cs" />
+    <Compile Include="CoreAudioAPI\AudioSessionDisconnectReason.cs" />
+    <Compile Include="CoreAudioAPI\AudioSessionManager.cs" />
+    <Compile Include="CoreAudioAPI\AudioSessionState.cs" />
+    <Compile Include="CoreAudioAPI\AudioVolumeNotificationData.cs" />
+    <Compile Include="CoreAudioAPI\EDataFlow.cs" />
+    <Compile Include="CoreAudioAPI\EDeviceState.cs" />
+    <Compile Include="CoreAudioAPI\EEndpointHardwareSupport.cs" />
+    <Compile Include="CoreAudioAPI\ERole.cs" />
+    <Compile Include="CoreAudioAPI\Interfaces\AUDIO_VOLUME_NOTIFICATION_DATA.cs" />
+    <Compile Include="CoreAudioAPI\Interfaces\Blob.cs" />
+    <Compile Include="CoreAudioAPI\Interfaces\CLSCTX.cs" />
+    <Compile Include="CoreAudioAPI\Interfaces\eStgmAccess.cs" />
+    <Compile Include="CoreAudioAPI\Interfaces\IAudioEndpointVolume.cs" />
+    <Compile Include="CoreAudioAPI\Interfaces\IAudioEndpointVolumeCallback.cs" />
+    <Compile Include="CoreAudioAPI\Interfaces\IAudioMeterInformation.cs" />
+    <Compile Include="CoreAudioAPI\Interfaces\IAudioPeakMeter.cs" />
+    <Compile Include="CoreAudioAPI\Interfaces\IAudioSessionControl2.cs" />
+    <Compile Include="CoreAudioAPI\Interfaces\IAudioSessionEnumerator.cs" />
+    <Compile Include="CoreAudioAPI\Interfaces\IAudioSessionEvents.cs" />
+    <Compile Include="CoreAudioAPI\Interfaces\IAudioSessionManager2.cs" />
+    <Compile Include="CoreAudioAPI\Interfaces\IMMDevice.cs" />
+    <Compile Include="CoreAudioAPI\Interfaces\IMMDeviceCollection.cs" />
+    <Compile Include="CoreAudioAPI\Interfaces\IMMDeviceEnumerator.cs" />
+    <Compile Include="CoreAudioAPI\Interfaces\IMMEndpoint.cs" />
+    <Compile Include="CoreAudioAPI\Interfaces\IPropertyStore.cs" />
+    <Compile Include="CoreAudioAPI\Interfaces\ISimpleAudioVolume.cs" />
+    <Compile Include="CoreAudioAPI\MMDevice.cs" />
+    <Compile Include="CoreAudioAPI\MMDeviceCollection.cs" />
+    <Compile Include="CoreAudioAPI\MMDeviceEnumerator.cs" />
+    <Compile Include="CoreAudioAPI\PKEY.cs" />
+    <Compile Include="CoreAudioAPI\PropertyKey.cs" />
+    <Compile Include="CoreAudioAPI\PropertyStore.cs" />
+    <Compile Include="CoreAudioAPI\PropertyStoreProperty.cs" />
+    <Compile Include="CoreAudioAPI\PropVariant.cs" />
+    <Compile Include="CoreAudioAPI\SessionCollection.cs" />
+    <Compile Include="CoreAudioAPI\SimpleAudioVolume.cs" />
     <Compile Include="EventHandlers\USB.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -133,13 +181,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CoreAudioApi\CoreAudioApi.csproj">
-      <Project>{9f1076aa-63df-4128-9c10-fd65e425c783}</Project>
-      <Name>CoreAudioApi</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Interceptor-master\Interceptor.csproj">
       <Project>{c451a00e-77f1-4f3f-b7ee-27dc712ea316}</Project>
       <Name>Interceptor</Name>

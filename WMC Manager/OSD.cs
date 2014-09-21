@@ -127,7 +127,7 @@ namespace WMC_Manager
             textBox1.ForeColor = Color.White;
             TransparencyKey = Color.Gray;
 
-            Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - 350, 50);
+            Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - (formObject.Size.Width + 50), Screen.PrimaryScreen.WorkingArea.Height - (formObject.Size.Height + 50));
         }
         protected override CreateParams CreateParams
         {

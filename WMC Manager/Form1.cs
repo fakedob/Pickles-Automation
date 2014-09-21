@@ -64,10 +64,9 @@ namespace WMC_Manager
                 EventManager.Initialize();
                 SystemEvents.SessionSwitch += new SessionSwitchEventHandler(SystemEvents_SessionSwitch);
 
-
                 InitializeIRDB();
                 InitializeIRToys();
-                InitializeAudio();
+                //InitializeAudio();
 
                 InitializeCursor();
                 InitializeMouse();
@@ -78,6 +77,7 @@ namespace WMC_Manager
                 InitializeFocus();
 
                 InitializeOSD();
+                InitializeMCEEvents();
 
                 UnlockSequenceInitialize();
                 PicklesAutomation.ConfigManager.IsApplicationLocked = true;
@@ -169,6 +169,10 @@ namespace WMC_Manager
             }
             else
             {
+                if (((ListBox)ctrl).Items.Count > 10)
+                {
+                    ((ListBox)ctrl).Items.RemoveAt(0);
+                }
                 ((ListBox)ctrl).Items.Add(text);
             }
         }
@@ -289,7 +293,7 @@ namespace WMC_Manager
                     {
                         if (myCapture == null)
                         {
-                            myCapture = new Capture();
+                            myCapture = new Capture(1);
                         }
 
                         firstFaceRecognisedTime = DateTime.Now;
@@ -411,116 +415,116 @@ namespace WMC_Manager
         #endregion
 
         #region Audio
-        static MMDevice device;
-        static DBRemoteKey VolumeUpIRKey;
-        static DBRemoteKey VolumeDownIRKey;
-        static DBRemoteKey MuteIRKey;
-        static int CurrentVolumeLevel;
-        static DBRemoteKeyList bufferSync;
-        static void InitializeAudio()
-        {
-            VolumeUpIRKey = DBManager.GetDBRemoteKeyByDesc("Volume Up");
-            VolumeDownIRKey = DBManager.GetDBRemoteKeyByDesc("Volume Down");
-            MuteIRKey = DBManager.GetDBRemoteKeyByDesc("Mute");
-            MMDeviceEnumerator DevEnum = new MMDeviceEnumerator();
-            device = DevEnum.GetDefaultAudioEndpoint(EDataFlow.eRender, ERole.eMultimedia);
-            CurrentVolumeLevel = (int)(device.AudioEndpointVolume.MasterVolumeLevelScalar * 100);
+        //static MMDevice device;
+        //static DBRemoteKey VolumeUpIRKey;
+        //static DBRemoteKey VolumeDownIRKey;
+        //static DBRemoteKey MuteIRKey;
+        //static int CurrentVolumeLevel;
+        //static DBRemoteKeyList bufferSync;
+        //static void InitializeAudio()
+        //{
+        //    VolumeUpIRKey = DBManager.GetDBRemoteKeyByDesc("Volume Up");
+        //    VolumeDownIRKey = DBManager.GetDBRemoteKeyByDesc("Volume Down");
+        //    MuteIRKey = DBManager.GetDBRemoteKeyByDesc("Mute");
+        //    MMDeviceEnumerator DevEnum = new MMDeviceEnumerator();
+        //    device = DevEnum.GetDefaultAudioEndpoint(EDataFlow.eRender, ERole.eMultimedia);
+        //    CurrentVolumeLevel = (int)(device.AudioEndpointVolume.MasterVolumeLevelScalar * 100);
 
-            //tbMaster.Value = (int)(device.AudioEndpointVolume.MasterVolumeLevelScalar * 100);
-            device.AudioEndpointVolume.OnVolumeNotification += new AudioEndpointVolumeNotificationDelegate(AudioEndpointVolume_OnVolumeNotification);
+        //    //tbMaster.Value = (int)(device.AudioEndpointVolume.MasterVolumeLevelScalar * 100);
+        //    device.AudioEndpointVolume.OnVolumeNotification += new AudioEndpointVolumeNotificationDelegate(AudioEndpointVolume_OnVolumeNotification);
 
-            bufferSync = new DBRemoteKeyList();
-            new Thread(() =>
-            {
-                //Thread.CurrentThread.IsBackground = true;
-                while (PicklesAutomation.ConfigManager.KeepThreadsAlive)
-                {
-                    if (bufferSync.Count > 0)
-                    {
-                        SendIR(bufferSync[0]);
-                        bufferSync.RemoveAt(0);
-                    }
-                    Thread.Sleep(150);
-                }
-            }).Start();
+        //    bufferSync = new DBRemoteKeyList();
+        //    new Thread(() =>
+        //    {
+        //        //Thread.CurrentThread.IsBackground = true;
+        //        while (PicklesAutomation.ConfigManager.KeepThreadsAlive)
+        //        {
+        //            if (bufferSync.Count > 0)
+        //            {
+        //                SendIR(bufferSync[0]);
+        //                bufferSync.RemoveAt(0);
+        //            }
+        //            Thread.Sleep(150);
+        //        }
+        //    }).Start();
 
-            //new Thread(() =>
-            //{
-            //    Thread.CurrentThread.IsBackground = true;
-            //    while (PicklesAutomation.ConfigManager.KeepThreadsAlive)
-            //    {
-            //        AppendTextList(bufferSync.Count.ToString());
-            //        Thread.Sleep(3000);
-            //    }
-            //}).Start();
+        //    //new Thread(() =>
+        //    //{
+        //    //    Thread.CurrentThread.IsBackground = true;
+        //    //    while (PicklesAutomation.ConfigManager.KeepThreadsAlive)
+        //    //    {
+        //    //        AppendTextList(bufferSync.Count.ToString());
+        //    //        Thread.Sleep(3000);
+        //    //    }
+        //    //}).Start();
 
-            //for (int i = 0; i < 100; i++)
-            //{
-            //    SetAudioLevel(i);
-            //    Thread.Sleep(300);
-            //}
-        }
+        //    //for (int i = 0; i < 100; i++)
+        //    //{
+        //    //    SetAudioLevel(i);
+        //    //    Thread.Sleep(300);
+        //    //}
+        //}
 
-        static void AudioEndpointVolume_OnVolumeNotification(AudioVolumeNotificationData data)
-        {
-            int UpdatedVolumeLevel = (int)(data.MasterVolume * 100);
-            if (data.Muted)
-            {
-                ShowOSD("Mute On");
-            }
-            else
-            {
-                ShowOSD(UpdatedVolumeLevel.ToString());
-            }
-            if (UpdatedVolumeLevel != CurrentVolumeLevel && (DateTime.Now - last_command_time).TotalMilliseconds >= 500)
-            {
-                DBRemoteKey myVolumeKey;
-                int difference;
-                if (UpdatedVolumeLevel > CurrentVolumeLevel)
-                {
-                    myVolumeKey = VolumeUpIRKey;
-                    difference = UpdatedVolumeLevel - CurrentVolumeLevel;
-                }
-                else
-                {
-                    myVolumeKey = VolumeDownIRKey;
-                    difference = CurrentVolumeLevel - UpdatedVolumeLevel;
-                }
-                for (int i = 0; i < difference; i++)
-                {
-                    bufferSync.Add(myVolumeKey);
-                }
-                CurrentVolumeLevel = UpdatedVolumeLevel;
-            }
-        }
+        //static void AudioEndpointVolume_OnVolumeNotification(AudioVolumeNotificationData data)
+        //{
+        //    int UpdatedVolumeLevel = (int)(data.MasterVolume * 100);
+        //    if (data.Muted)
+        //    {
+        //        ShowOSD("Mute On");
+        //    }
+        //    else
+        //    {
+        //        ShowOSD(UpdatedVolumeLevel.ToString());
+        //    }
+        //    if (UpdatedVolumeLevel != CurrentVolumeLevel && (DateTime.Now - last_command_time).TotalMilliseconds >= 500)
+        //    {
+        //        DBRemoteKey myVolumeKey;
+        //        int difference;
+        //        if (UpdatedVolumeLevel > CurrentVolumeLevel)
+        //        {
+        //            myVolumeKey = VolumeUpIRKey;
+        //            difference = UpdatedVolumeLevel - CurrentVolumeLevel;
+        //        }
+        //        else
+        //        {
+        //            myVolumeKey = VolumeDownIRKey;
+        //            difference = CurrentVolumeLevel - UpdatedVolumeLevel;
+        //        }
+        //        for (int i = 0; i < difference; i++)
+        //        {
+        //            bufferSync.Add(myVolumeKey);
+        //        }
+        //        CurrentVolumeLevel = UpdatedVolumeLevel;
+        //    }
+        //}
 
-        static void SetAudioLevel(int level)
-        {
-            if (level > 100)
-            {
-                level = 100;
-            }
-            else if (level < 0)
-            {
-                level = 0;
-            }
-            CurrentVolumeLevel = level;
-            device.AudioEndpointVolume.MasterVolumeLevelScalar = ((float)level / 100.0f);
-        }
+        //static void SetAudioLevel(int level)
+        //{
+        //    if (level > 100)
+        //    {
+        //        level = 100;
+        //    }
+        //    else if (level < 0)
+        //    {
+        //        level = 0;
+        //    }
+        //    CurrentVolumeLevel = level;
+        //    device.AudioEndpointVolume.MasterVolumeLevelScalar = ((float)level / 100.0f);
+        //}
 
-        static void ToggleMute()
-        {
-            //if (!device.AudioEndpointVolume.Mute)
-            //{
-            //    SetAudioLevel(0);
-            //}
-            //else
-            //{
-            //    SetAudioLevel(CurrentVolumeLevel);
-            //}
-            device.AudioEndpointVolume.Mute = !device.AudioEndpointVolume.Mute;
-            //SendIR(MuteIRKey);
-        }
+        //static void ToggleMute()
+        //{
+        //    //if (!device.AudioEndpointVolume.Mute)
+        //    //{
+        //    //    SetAudioLevel(0);
+        //    //}
+        //    //else
+        //    //{
+        //    //    SetAudioLevel(CurrentVolumeLevel);
+        //    //}
+        //    device.AudioEndpointVolume.Mute = !device.AudioEndpointVolume.Mute;
+        //    //SendIR(MuteIRKey);
+        //}
         //detect headphones key and change default device :)
         #endregion
 
@@ -620,6 +624,18 @@ namespace WMC_Manager
             }
         }
         #endregion
+
+        #region MCEEvents
+        static void InitializeMCEEvents()
+        {
+            WMC.Initialize();
+            WMC.OnMCEEvent += new WMC.MceEvent(OnMCEEvent);
+        }
+        static void OnMCEEvent(string eventName)
+        {
+            AppendTextList(eventName);
+        }
+        #endregion MCEEvents
 
         #region UserSession
         static DateTime sessionLockTime = DateTime.Now;
@@ -839,7 +855,6 @@ namespace WMC_Manager
                         last_receiver_name = e.ComPortName;
                     }
                     last_sensor_command_received = DateTime.Now;
-
                     if (myRemoteKey.KeyDesc == "TVPower")
                     {
                         SoundClips.WindowsSounds.WindowsMessageNudge.Play();
@@ -881,8 +896,28 @@ namespace WMC_Manager
                     }
                     else if (myRemoteKey.KeyDesc == "Mute")
                     {
-                        ToggleMute();
-                        last_command_time = DateTime.Now;
+                        Common.MediaKeysManager.Mute();
+                        return;
+                    }
+                    else if (myRemoteKey.KeyDesc == "Play")
+                    {
+                        Common.MediaKeysManager.PlayPause();
+                        return;
+                    }
+                    else if (myRemoteKey.KeyDesc == "SurroundModes")
+                    {
+                        SpeakerManager.ChangeSpeakerProfile();
+                        SendMessageToMCE("Surround Mode", SpeakerManager.CurrentSpeakerMap);
+                        return;
+                    }
+                    else if (myRemoteKey.KeyDesc == "VideoModes")
+                    {
+                        SendMessageToMCE("Sound Profile", SpeakerManager.ChangeSoundProfile());
+                        return;
+                    }
+                    else if (myRemoteKey.KeyDesc == "AudioEffects")
+                    {
+                        //not implemented
                         return;
                     }
 
@@ -1022,7 +1057,34 @@ namespace WMC_Manager
                             first_repeat = true;
                         }
 
-                        if (myRemoteKey.KeyDesc == "OK")
+
+                        if (myRemoteKey.KeyDesc == "Volume Up")
+                        {
+                            if (FilterKeyPresses(1))
+                            {
+                                Common.MediaKeysManager.VolumeIncrease();
+                                last_command_time = DateTime.Now;
+                                if (!is_repeat)
+                                {
+                                    last_command_time = last_command_time.AddMilliseconds(200);
+                                }
+                            }
+                            return;
+                        }
+                        else if (myRemoteKey.KeyDesc == "Volume Down")
+                        {
+                            if (FilterKeyPresses(1))
+                            {
+                                Common.MediaKeysManager.VolumeDecrease();
+                                last_command_time = DateTime.Now;
+                                if (!is_repeat)
+                                {
+                                    last_command_time = last_command_time.AddMilliseconds(200);
+                                }
+                            }
+                            return;
+                        }
+                        else if (myRemoteKey.KeyDesc == "OK")
                         {
                             allow = false;
                             send_key = "{ENTER}";
@@ -1057,11 +1119,11 @@ namespace WMC_Manager
                             allow = false;
                             send_key = "^(p)";
                         }
-                        else if (myRemoteKey.KeyDesc == "Play")
-                        {
-                            allow = false;
-                            send_key = "^+(p)";
-                        }
+                        //else if (myRemoteKey.KeyDesc == "Play")
+                        //{
+                        //    allow = false;
+                        //    send_key = "^+(p)";
+                        //}
                         else if (myRemoteKey.KeyDesc == "Stop")
                         {
                             allow = false;
@@ -1153,32 +1215,12 @@ namespace WMC_Manager
                     if (allow)
                     {
                         
-                        if (FilterKeyPresses(100))
+                        //if (FilterKeyPresses(100))
+                        if (true)
                         {
                             last_command_time = DateTime.Now;
-                            SendIR(myRemoteKey);
-                            if (myRemoteKey.KeyDesc == "Volume Up")
-                            {
-                                if (!device.AudioEndpointVolume.Mute || CurrentVolumeLevel == 0)
-                                {
-                                    SetAudioLevel(CurrentVolumeLevel + 1);
-                                }
-                                else
-                                {
-                                    ToggleMute();
-                                }
-                            }
-                            else if (myRemoteKey.KeyDesc == "Volume Down")
-                            {
-                                if (!device.AudioEndpointVolume.Mute)
-                                {
-                                    SetAudioLevel(CurrentVolumeLevel - 1);
-                                }
-                                else
-                                {
-                                    ToggleMute();
-                                }
-                            }
+                            //SendIR(myRemoteKey);
+                            
                         }
                         //if (!is_repeat)
                         //{
@@ -1195,6 +1237,7 @@ namespace WMC_Manager
                 }
                 catch (Exception ex)
                 {
+                    AppendTextList(ex.Message);
                     EventManager.LogEvent(EventType.Exception, ex.Message, "KeyReceived");
                 }
             }

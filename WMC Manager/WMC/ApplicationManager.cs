@@ -12,7 +12,7 @@ namespace WMC_Manager
 {
     public class ApplicationManager
     {
-        private static RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+        //private static RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
         public static string ActiveProcessFileName
         {
             get
@@ -48,32 +48,32 @@ namespace WMC_Manager
                 }
             }
         }
-
-        public static bool WinStart
-        {
-            get
-            {
-                if (rkApp.GetValue(Process.GetCurrentProcess().ProcessName) == null)
-                {
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-            }
-            set
-            {
-                if (value)
-                {
-                    rkApp.SetValue(Process.GetCurrentProcess().ProcessName, System.Windows.Forms.Application.ExecutablePath.ToString());
-                }
-                else
-                {
-                    rkApp.DeleteValue(Process.GetCurrentProcess().ProcessName, false);
-                }
-            }
-        }
+        public static bool WinStart = false; //implement the taskschedule logic here
+        //public static bool WinStart
+        //{
+        //    get
+        //    {
+        //        if (rkApp.GetValue(Process.GetCurrentProcess().ProcessName) == null)
+        //        {
+        //            return false;
+        //        }
+        //        else
+        //        {
+        //            return true;
+        //        }
+        //    }
+        //    set
+        //    {
+        //        if (value)
+        //        {
+        //            rkApp.SetValue(Process.GetCurrentProcess().ProcessName, System.Windows.Forms.Application.ExecutablePath.ToString());
+        //        }
+        //        else
+        //        {
+        //            rkApp.DeleteValue(Process.GetCurrentProcess().ProcessName, false);
+        //        }
+        //    }
+        //}
 
         [DllImport("user32.dll")]
         private static extern IntPtr GetForegroundWindow();

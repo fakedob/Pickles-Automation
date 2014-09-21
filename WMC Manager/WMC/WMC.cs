@@ -6,10 +6,14 @@ using Microsoft.MediaCenter.Samples.MediaState;
 
 namespace WMC_Manager
 {
-    public class WMC
+    public static class WMC
     {
-        MediaState ms;
-        public WMC()
+        static MediaState ms;
+        public delegate void MceEvent(string eventName);
+
+        public static MceEvent OnMCEEvent;
+
+        public static void Initialize()
         {
             ms = new MediaState();
             HookEvents(); //typed first
@@ -17,17 +21,21 @@ namespace WMC_Manager
             ms.Connect();
         }
 
-        private void Dump(string message)
+        private static void Dump(string message)
         {
-            System.Diagnostics.Debug.Print(message);
+            if (OnMCEEvent != null)
+            {
+                OnMCEEvent(message);
+            }
+            //System.Diagnostics.Debug.Print(message);
         }
 
-        private void HookEvent()
+        private static void HookEvent()
         {
             ms.OnMSASEvent += new Microsoft.MediaCenter.Samples.MediaState.MediaState.MSASEventHandler(ms_OnMSASEvent);
         }
 
-        private void ms_OnMSASEvent(object state, MediaStatusEventArgs args)
+        private static void ms_OnMSASEvent(object state, MediaStatusEventArgs args)
         {
             MediaState typedState = (MediaState)state;
             //Dump("MediaState_OnMSASEvent");
@@ -60,7 +68,7 @@ namespace WMC_Manager
             Dump(strOut);
         }
 
-        private void HookEvents()
+        private static void HookEvents()
         {
             ms.MediaCenter.EjectingChanged += new EventHandler(MediaCenter_EjectingChanged);
             ms.MediaCenter.Ended += new EventHandler(MediaCenter_Ended);
@@ -215,726 +223,722 @@ namespace WMC_Manager
         }
 
         #region MediaCenter
-        private void MediaCenter_EjectingChanged(object sender, EventArgs e)
+        private static void MediaCenter_EjectingChanged(object sender, EventArgs e)
         {
             Dump("MediaCenter_EjectingChanged");
         }
 
-        private void MediaCenter_Ended(object sender, EventArgs e)
+        private static void MediaCenter_Ended(object sender, EventArgs e)
         {
-            //Dump("MediaCenter_Ended");
-            //if (!stopping)
-            //{
-            //    Power();
-            //}
+            Dump("MediaCenter_Ended");
         }
 
-        private void MediaCenter_ErrorChanged(object sender, EventArgs e)
+        private static void MediaCenter_ErrorChanged(object sender, EventArgs e)
         {
             Dump("MediaCenter_ErrorChanged");
         }
 
-        private void MediaCenter_Forwarding(object sender, EventArgs e)
+        private static void MediaCenter_Forwarding(object sender, EventArgs e)
         {
             Dump("MediaCenter_Forwarding");
         }
 
-        private void MediaCenter_GuideLoadedChanged(object sender, EventArgs e)
+        private static void MediaCenter_GuideLoadedChanged(object sender, EventArgs e)
         {
             Dump("MediaCenter_GuideLoadedChanged");
         }
 
-        private void MediaCenter_MediaChanged(object sender, EventArgs e)
+        private static void MediaCenter_MediaChanged(object sender, EventArgs e)
         {
             Dump("MediaCenter_MediaChanged");
         }
 
-        private void MediaCenter_MuteChanged(object sender, EventArgs e)
+        private static void MediaCenter_MuteChanged(object sender, EventArgs e)
         {
             Dump("MediaCenter_MuteChanged");
         }
 
-        private void MediaCenter_NavigationChanged(object sender, EventArgs e)
+        private static void MediaCenter_NavigationChanged(object sender, EventArgs e)
         {
             Dump("MediaCenter_NavigationChanged");
         }
 
-        private void MediaCenter_Pausing(object sender, EventArgs e)
+        private static void MediaCenter_Pausing(object sender, EventArgs e)
         {
             Dump("MediaCenter_Pausing");
         }
 
-        private void MediaCenter_Playing(object sender, EventArgs e)
+        private static void MediaCenter_Playing(object sender, EventArgs e)
         {
             Dump("MediaCenter_Playing");
         }
 
-        private void MediaCenter_Rewinding(object sender, EventArgs e)
+        private static void MediaCenter_Rewinding(object sender, EventArgs e)
         {
             Dump("MediaCenter_Rewinding");
         }
 
-        private void MediaCenter_Started(object sender, EventArgs e)
+        private static void MediaCenter_Started(object sender, EventArgs e)
         {
             Dump("MediaCenter_Started");
         }
 
-        private void MediaCenter_Stopping(object sender, EventArgs e)
+        private static void MediaCenter_Stopping(object sender, EventArgs e)
         {
             Dump("MediaCenter_Stopping");
         }
 
-        private void MediaCenter_VolumeChanged(object sender, EventArgs e)
+        private static void MediaCenter_VolumeChanged(object sender, EventArgs e)
         {
             Dump("MediaCenter_VolumeChanged");
         }
         #endregion
 
         #region CD
-        private void CD_EjectingChanged(object sender, EventArgs e)
+        private static void CD_EjectingChanged(object sender, EventArgs e)
         {
             Dump("CD_EjectingChanged");
         }
 
-        private void CD_Ended(object sender, EventArgs e)
+        private static void CD_Ended(object sender, EventArgs e)
         {
             Dump("CD_Ended");
         }
 
-        private void CD_ErrorChanged(object sender, EventArgs e)
+        private static void CD_ErrorChanged(object sender, EventArgs e)
         {
             Dump("CD_ErrorChanged");
         }
 
-        private void CD_Forwarding(object sender, EventArgs e)
+        private static void CD_Forwarding(object sender, EventArgs e)
         {
             Dump("CD_Forwarding");
         }
 
-        private void CD_GuideLoadedChanged(object sender, EventArgs e)
+        private static void CD_GuideLoadedChanged(object sender, EventArgs e)
         {
             Dump("CD_GuideLoadedChanged");
         }
 
-        private void CD_MediaChanged(object sender, EventArgs e)
+        private static void CD_MediaChanged(object sender, EventArgs e)
         {
             Dump("CD_MediaChanged");
         }
 
-        private void CD_Pausing(object sender, EventArgs e)
+        private static void CD_Pausing(object sender, EventArgs e)
         {
             Dump("CD_Pausing");
         }
 
-        private void CD_Playing(object sender, EventArgs e)
+        private static void CD_Playing(object sender, EventArgs e)
         {
             Dump("CD_Playing");
         }
 
-        private void CD_RepeatSetChanged(object sender, EventArgs e)
+        private static void CD_RepeatSetChanged(object sender, EventArgs e)
         {
             Dump("CD_RepeatSetChanged");
         }
 
-        private void CD_Rewinding(object sender, EventArgs e)
+        private static void CD_Rewinding(object sender, EventArgs e)
         {
             Dump("CD_Rewinding");
         }
 
-        private void CD_ShuffleChanged(object sender, EventArgs e)
+        private static void CD_ShuffleChanged(object sender, EventArgs e)
         {
             Dump("CD_ShuffleChanged");
         }
 
-        private void CD_Started(object sender, EventArgs e)
+        private static void CD_Started(object sender, EventArgs e)
         {
             Dump("CD_Started");
         }
 
-        private void CD_Stopping(object sender, EventArgs e)
+        private static void CD_Stopping(object sender, EventArgs e)
         {
             Dump("CD_Stopping");
         }
 
-        private void CD_TrackTimeChanged(object sender, EventArgs e)
+        private static void CD_TrackTimeChanged(object sender, EventArgs e)
         {
             Dump("CD_TrackTimeChanged");
         }
 
-        private void CD_VisualizationChanged(object sender, EventArgs e)
+        private static void CD_VisualizationChanged(object sender, EventArgs e)
         {
             Dump("CD_VisualizationChanged");
         }
         #endregion
 
         #region DVD
-        private void DVD_ChapterChanged(object sender, EventArgs e)
+        private static void DVD_ChapterChanged(object sender, EventArgs e)
         {
             Dump("DVD_ChapterChanged");
         }
 
-        private void DVD_EjectingChanged(object sender, EventArgs e)
+        private static void DVD_EjectingChanged(object sender, EventArgs e)
         {
             Dump("DVD_EjectingChanged");
         }
 
-        private void DVD_Ended(object sender, EventArgs e)
+        private static void DVD_Ended(object sender, EventArgs e)
         {
             Dump("DVD_Ended");
         }
 
-        private void DVD_ErrorChanged(object sender, EventArgs e)
+        private static void DVD_ErrorChanged(object sender, EventArgs e)
         {
             Dump("DVD_ErrorChanged");
         }
 
-        private void DVD_Forwarding(object sender, EventArgs e)
+        private static void DVD_Forwarding(object sender, EventArgs e)
         {
             Dump("DVD_Forwarding");
         }
 
-        private void DVD_GuideLoadedChanged(object sender, EventArgs e)
+        private static void DVD_GuideLoadedChanged(object sender, EventArgs e)
         {
             Dump("DVD_GuideLoadedChanged");
         }
 
-        private void DVD_MediaChanged(object sender, EventArgs e)
+        private static void DVD_MediaChanged(object sender, EventArgs e)
         {
             Dump("DVD_MediaChanged");
         }
 
-        private void DVD_Pausing(object sender, EventArgs e)
+        private static void DVD_Pausing(object sender, EventArgs e)
         {
             Dump("DVD_Pausing");
         }
 
-        private void DVD_Playing(object sender, EventArgs e)
+        private static void DVD_Playing(object sender, EventArgs e)
         {
             Dump("DVD_Playing");
         }
 
-        private void DVD_Rewinding(object sender, EventArgs e)
+        private static void DVD_Rewinding(object sender, EventArgs e)
         {
             Dump("DVD_Rewinding");
         }
 
-        private void DVD_Started(object sender, EventArgs e)
+        private static void DVD_Started(object sender, EventArgs e)
         {
             Dump("DVD_Started");
         }
 
-        private void DVD_Stopping(object sender, EventArgs e)
+        private static void DVD_Stopping(object sender, EventArgs e)
         {
             Dump("DVD_Stopping");
         }
 
-        private void DVD_TrackTimeChanged(object sender, EventArgs e)
+        private static void DVD_TrackTimeChanged(object sender, EventArgs e)
         {
             Dump("DVD_TrackTimeChanged");
         }
         #endregion
 
         #region Music
-        private void Music_EjectingChanged(object sender, EventArgs e)
+        private static void Music_EjectingChanged(object sender, EventArgs e)
         {
             Dump("Music_EjectingChanged");
         }
 
-        private void Music_Ended(object sender, EventArgs e)
+        private static void Music_Ended(object sender, EventArgs e)
         {
             Dump("Music_Ended");
         }
 
-        private void Music_ErrorChanged(object sender, EventArgs e)
+        private static void Music_ErrorChanged(object sender, EventArgs e)
         {
             Dump("Music_ErrorChanged");
         }
 
-        private void Music_Forwarding(object sender, EventArgs e)
+        private static void Music_Forwarding(object sender, EventArgs e)
         {
             Dump("Music_Forwarding");
         }
 
-        private void Music_GuideLoadedChanged(object sender, EventArgs e)
+        private static void Music_GuideLoadedChanged(object sender, EventArgs e)
         {
             Dump("Music_GuideLoadedChanged");
         }
 
-        private void Music_MediaChanged(object sender, EventArgs e)
+        private static void Music_MediaChanged(object sender, EventArgs e)
         {
             Dump("Music_MediaChanged");
         }
 
-        private void Music_Pausing(object sender, EventArgs e)
+        private static void Music_Pausing(object sender, EventArgs e)
         {
             Dump("Music_Pausing");
         }
 
-        private void Music_Playing(object sender, EventArgs e)
+        private static void Music_Playing(object sender, EventArgs e)
         {
             Dump("Music_Playing");
         }
 
-        private void Music_RepeatSetChanged(object sender, EventArgs e)
+        private static void Music_RepeatSetChanged(object sender, EventArgs e)
         {
             Dump("Music_RepeatSetChanged");
         }
 
-        private void Music_Rewinding(object sender, EventArgs e)
+        private static void Music_Rewinding(object sender, EventArgs e)
         {
             Dump("Music_Rewinding");
         }
 
-        private void Music_ShuffleChanged(object sender, EventArgs e)
+        private static void Music_ShuffleChanged(object sender, EventArgs e)
         {
             Dump("Music_ShuffleChanged");
         }
 
-        private void Music_Started(object sender, EventArgs e)
+        private static void Music_Started(object sender, EventArgs e)
         {
             Dump("Music_Started");
         }
 
-        private void Music_Stopping(object sender, EventArgs e)
+        private static void Music_Stopping(object sender, EventArgs e)
         {
             Dump("Music_Stopping");
         }
 
-        private void Music_TrackTimeChanged(object sender, EventArgs e)
+        private static void Music_TrackTimeChanged(object sender, EventArgs e)
         {
             Dump("Music_TrackTimeChanged");
         }
 
-        private void Music_VisualizationChanged(object sender, EventArgs e)
+        private static void Music_VisualizationChanged(object sender, EventArgs e)
         {
             Dump("Music_VisualizationChanged");
         }
         #endregion
 
         #region PhoneCall
-        private void PhoneCall_EjectingChanged(object sender, EventArgs e)
+        private static void PhoneCall_EjectingChanged(object sender, EventArgs e)
         {
             Dump("PhoneCall_EjectingChanged");
         }
 
-        private void PhoneCall_Ended(object sender, EventArgs e)
+        private static void PhoneCall_Ended(object sender, EventArgs e)
         {
             Dump("PhoneCall_Ended");
         }
 
-        private void PhoneCall_ErrorChanged(object sender, EventArgs e)
+        private static void PhoneCall_ErrorChanged(object sender, EventArgs e)
         {
             Dump("PhoneCall_ErrorChanged");
         }
 
-        private void PhoneCall_Forwarding(object sender, EventArgs e)
+        private static void PhoneCall_Forwarding(object sender, EventArgs e)
         {
             Dump("PhoneCall_Forwarding");
         }
 
-        private void PhoneCall_GuideLoadedChanged(object sender, EventArgs e)
+        private static void PhoneCall_GuideLoadedChanged(object sender, EventArgs e)
         {
             Dump("PhoneCall_GuideLoadedChanged");
         }
 
-        private void PhoneCall_MediaChanged(object sender, EventArgs e)
+        private static void PhoneCall_MediaChanged(object sender, EventArgs e)
         {
             Dump("PhoneCall_MediaChanged");
         }
 
-        private void PhoneCall_Pausing(object sender, EventArgs e)
+        private static void PhoneCall_Pausing(object sender, EventArgs e)
         {
             Dump("PhoneCall_Pausing");
         }
 
-        private void PhoneCall_Playing(object sender, EventArgs e)
+        private static void PhoneCall_Playing(object sender, EventArgs e)
         {
             Dump("PhoneCall_Playing");
         }
 
-        private void PhoneCall_Rewinding(object sender, EventArgs e)
+        private static void PhoneCall_Rewinding(object sender, EventArgs e)
         {
             Dump("PhoneCall_Rewinding");
         }
 
-        private void PhoneCall_Started(object sender, EventArgs e)
+        private static void PhoneCall_Started(object sender, EventArgs e)
         {
             Dump("PhoneCall_Started");
         }
 
-        private void PhoneCall_Stopping(object sender, EventArgs e)
+        private static void PhoneCall_Stopping(object sender, EventArgs e)
         {
             Dump("PhoneCall_Stopping");
         }
         #endregion
 
         #region Pictures
-        private void Pictures_CurrentPictureChanged(object sender, EventArgs e)
+        private static void Pictures_CurrentPictureChanged(object sender, EventArgs e)
         {
             Dump("Pictures_CurrentPictureChanged");
         }
 
-        private void Pictures_EjectingChanged(object sender, EventArgs e)
+        private static void Pictures_EjectingChanged(object sender, EventArgs e)
         {
             Dump("Pictures_EjectingChanged");
         }
 
-        private void Pictures_Ended(object sender, EventArgs e)
+        private static void Pictures_Ended(object sender, EventArgs e)
         {
             Dump("Pictures_Ended");
         }
 
-        private void Pictures_ErrorChanged(object sender, EventArgs e)
+        private static void Pictures_ErrorChanged(object sender, EventArgs e)
         {
             Dump("Pictures_ErrorChanged");
         }
 
-        private void Pictures_Forwarding(object sender, EventArgs e)
+        private static void Pictures_Forwarding(object sender, EventArgs e)
         {
             Dump("Pictures_Forwarding");
         }
 
-        private void Pictures_GuideLoadedChanged(object sender, EventArgs e)
+        private static void Pictures_GuideLoadedChanged(object sender, EventArgs e)
         {
             Dump("Pictures_GuideLoadedChanged");
         }
 
-        private void Pictures_MediaChanged(object sender, EventArgs e)
+        private static void Pictures_MediaChanged(object sender, EventArgs e)
         {
             Dump("Pictures_MediaChanged");
         }
 
-        private void Pictures_Pausing(object sender, EventArgs e)
+        private static void Pictures_Pausing(object sender, EventArgs e)
         {
             Dump("Pictures_Pausing");
         }
 
-        private void Pictures_Playing(object sender, EventArgs e)
+        private static void Pictures_Playing(object sender, EventArgs e)
         {
             Dump("Pictures_Playing");
         }
 
-        private void Pictures_Rewinding(object sender, EventArgs e)
+        private static void Pictures_Rewinding(object sender, EventArgs e)
         {
             Dump("Pictures_Rewinding");
         }
 
-        private void Pictures_Started(object sender, EventArgs e)
+        private static void Pictures_Started(object sender, EventArgs e)
         {
             Dump("Pictures_Started");
         }
 
-        private void Pictures_Stopping(object sender, EventArgs e)
+        private static void Pictures_Stopping(object sender, EventArgs e)
         {
             Dump("Pictures_Stopping");
         }
         #endregion
 
         #region Radio
-        private void Radio_EjectingChanged(object sender, EventArgs e)
+        private static void Radio_EjectingChanged(object sender, EventArgs e)
         {
             Dump("Radio_EjectingChanged");
         }
 
-        private void Radio_Ended(object sender, EventArgs e)
+        private static void Radio_Ended(object sender, EventArgs e)
         {
             Dump("Radio_Ended");
         }
 
-        private void Radio_ErrorChanged(object sender, EventArgs e)
+        private static void Radio_ErrorChanged(object sender, EventArgs e)
         {
             Dump("Radio_ErrorChanged");
         }
 
-        private void Radio_Forwarding(object sender, EventArgs e)
+        private static void Radio_Forwarding(object sender, EventArgs e)
         {
             Dump("Radio_Forwarding");
         }
 
-        private void Radio_FrequencyChanged(object sender, EventArgs e)
+        private static void Radio_FrequencyChanged(object sender, EventArgs e)
         {
             Dump("Radio_FrequencyChanged");
         }
 
-        private void Radio_GuideLoadedChanged(object sender, EventArgs e)
+        private static void Radio_GuideLoadedChanged(object sender, EventArgs e)
         {
             Dump("Radio_GuideLoadedChanged");
         }
 
-        private void Radio_MediaChanged(object sender, EventArgs e)
+        private static void Radio_MediaChanged(object sender, EventArgs e)
         {
             Dump("Radio_MediaChanged");
         }
 
-        private void Radio_Pausing(object sender, EventArgs e)
+        private static void Radio_Pausing(object sender, EventArgs e)
         {
             Dump("Radio_Pausing");
         }
 
-        private void Radio_Playing(object sender, EventArgs e)
+        private static void Radio_Playing(object sender, EventArgs e)
         {
             Dump("Radio_Playing");
         }
 
-        private void Radio_Rewinding(object sender, EventArgs e)
+        private static void Radio_Rewinding(object sender, EventArgs e)
         {
             Dump("Radio_Rewinding");
         }
 
-        private void Radio_Started(object sender, EventArgs e)
+        private static void Radio_Started(object sender, EventArgs e)
         {
             Dump("Radio_Started");
         }
 
-        private void Radio_Stopping(object sender, EventArgs e)
+        private static void Radio_Stopping(object sender, EventArgs e)
         {
             Dump("Radio_Stopping");
         }
         #endregion
 
         #region TV
-        private void TV_EjectingChanged(object sender, EventArgs e)
+        private static void TV_EjectingChanged(object sender, EventArgs e)
         {
             Dump("TV_EjectingChanged");
         }
 
-        private void TV_Ended(object sender, EventArgs e)
+        private static void TV_Ended(object sender, EventArgs e)
         {
             Dump("TV_Ended");
         }
 
-        private void TV_ErrorChanged(object sender, EventArgs e)
+        private static void TV_ErrorChanged(object sender, EventArgs e)
         {
             Dump("TV_ErrorChanged");
         }
 
-        private void TV_Forwarding(object sender, EventArgs e)
+        private static void TV_Forwarding(object sender, EventArgs e)
         {
             Dump("TV_Forwarding");
         }
 
-        private void TV_GuideLoadedChanged(object sender, EventArgs e)
+        private static void TV_GuideLoadedChanged(object sender, EventArgs e)
         {
             Dump("TV_GuideLoadedChanged");
         }
 
-        private void TV_MediaChanged(object sender, EventArgs e)
+        private static void TV_MediaChanged(object sender, EventArgs e)
         {
             Dump("TV_MediaChanged");
         }
 
-        private void TV_Pausing(object sender, EventArgs e)
+        private static void TV_Pausing(object sender, EventArgs e)
         {
             Dump("TV_Pausing");
         }
 
-        private void TV_Playing(object sender, EventArgs e)
+        private static void TV_Playing(object sender, EventArgs e)
         {
             Dump("TV_Playing");
         }
 
-        private void TV_Rewinding(object sender, EventArgs e)
+        private static void TV_Rewinding(object sender, EventArgs e)
         {
             Dump("TV_Rewinding");
         }
 
-        private void TV_Started(object sender, EventArgs e)
+        private static void TV_Started(object sender, EventArgs e)
         {
             Dump("TV_Started");
         }
 
-        private void TV_Stopping(object sender, EventArgs e)
+        private static void TV_Stopping(object sender, EventArgs e)
         {
             Dump("TV_Stopping");
         }
 
-        private void TV_TrackTimeChanged(object sender, EventArgs e)
+        private static void TV_TrackTimeChanged(object sender, EventArgs e)
         {
             Dump("TV_TrackTimeChanged");
         }
         #endregion
 
         #region TVRecorded
-        private void TVRecorded_EjectingChanged(object sender, EventArgs e)
+        private static void TVRecorded_EjectingChanged(object sender, EventArgs e)
         {
             Dump("TVRecorded_EjectingChanged");
         }
 
-        private void TVRecorded_Ended(object sender, EventArgs e)
+        private static void TVRecorded_Ended(object sender, EventArgs e)
         {
             Dump("TVRecorded_Ended");
         }
 
-        private void TVRecorded_ErrorChanged(object sender, EventArgs e)
+        private static void TVRecorded_ErrorChanged(object sender, EventArgs e)
         {
             Dump("TVRecorded_ErrorChanged");
         }
 
-        private void TVRecorded_Forwarding(object sender, EventArgs e)
+        private static void TVRecorded_Forwarding(object sender, EventArgs e)
         {
             Dump("TVRecorded_Forwarding");
         }
 
-        private void TVRecorded_GuideLoadedChanged(object sender, EventArgs e)
+        private static void TVRecorded_GuideLoadedChanged(object sender, EventArgs e)
         {
             Dump("TVRecorded_GuideLoadedChanged");
         }
 
-        private void TVRecorded_MediaChanged(object sender, EventArgs e)
+        private static void TVRecorded_MediaChanged(object sender, EventArgs e)
         {
             Dump("TVRecorded_MediaChanged");
         }
 
-        private void TVRecorded_Pausing(object sender, EventArgs e)
+        private static void TVRecorded_Pausing(object sender, EventArgs e)
         {
             Dump("TVRecorded_Pausing");
         }
 
-        private void TVRecorded_Playing(object sender, EventArgs e)
+        private static void TVRecorded_Playing(object sender, EventArgs e)
         {
             Dump("TVRecorded_Playing");
         }
 
-        private void TVRecorded_Rewinding(object sender, EventArgs e)
+        private static void TVRecorded_Rewinding(object sender, EventArgs e)
         {
             Dump("TVRecorded_Rewinding");
         }
 
-        private void TVRecorded_Started(object sender, EventArgs e)
+        private static void TVRecorded_Started(object sender, EventArgs e)
         {
             Dump("TVRecorded_Started");
         }
 
-        private void TVRecorded_Stopping(object sender, EventArgs e)
+        private static void TVRecorded_Stopping(object sender, EventArgs e)
         {
             Dump("TVRecorded_Stopping");
         }
 
-        private void TVRecorded_TrackTimeChanged(object sender, EventArgs e)
+        private static void TVRecorded_TrackTimeChanged(object sender, EventArgs e)
         {
             Dump("TVRecorded_TrackTimeChanged");
         }
         #endregion
 
         #region TVRecording
-        private void TVRecording_EjectingChanged(object sender, EventArgs e)
+        private static void TVRecording_EjectingChanged(object sender, EventArgs e)
         {
             Dump("TVRecording_EjectingChanged");
         }
 
-        private void TVRecording_Ended(object sender, EventArgs e)
+        private static void TVRecording_Ended(object sender, EventArgs e)
         {
             Dump("TVRecording_Ended");
         }
 
-        private void TVRecording_ErrorChanged(object sender, EventArgs e)
+        private static void TVRecording_ErrorChanged(object sender, EventArgs e)
         {
             Dump("TVRecording_ErrorChanged");
         }
 
-        private void TVRecording_Forwarding(object sender, EventArgs e)
+        private static void TVRecording_Forwarding(object sender, EventArgs e)
         {
             Dump("TVRecording_Forwarding");
         }
 
-        private void TVRecording_GuideLoadedChanged(object sender, EventArgs e)
+        private static void TVRecording_GuideLoadedChanged(object sender, EventArgs e)
         {
             Dump("TVRecording_GuideLoadedChanged");
         }
 
-        private void TVRecording_MediaChanged(object sender, EventArgs e)
+        private static void TVRecording_MediaChanged(object sender, EventArgs e)
         {
             Dump("TVRecording_MediaChanged");
         }
 
-        private void TVRecording_Pausing(object sender, EventArgs e)
+        private static void TVRecording_Pausing(object sender, EventArgs e)
         {
             Dump("TVRecording_Pausing");
         }
 
-        private void TVRecording_Playing(object sender, EventArgs e)
+        private static void TVRecording_Playing(object sender, EventArgs e)
         {
             Dump("TVRecording_Playing");
         }
 
-        private void TVRecording_Rewinding(object sender, EventArgs e)
+        private static void TVRecording_Rewinding(object sender, EventArgs e)
         {
             Dump("TVRecording_Rewinding");
         }
 
-        private void TVRecording_Started(object sender, EventArgs e)
+        private static void TVRecording_Started(object sender, EventArgs e)
         {
             Dump("TVRecording_Started");
         }
 
-        private void TVRecording_Stopping(object sender, EventArgs e)
+        private static void TVRecording_Stopping(object sender, EventArgs e)
         {
             Dump("TVRecording_Stopping");
         }
 
-        private void TVRecording_TrackTimeChanged(object sender, EventArgs e)
+        private static void TVRecording_TrackTimeChanged(object sender, EventArgs e)
         {
             Dump("TVRecording_TrackTimeChanged");
         }
         #endregion
 
         #region Video
-        private void Video_EjectingChanged(object sender, EventArgs e)
+        private static void Video_EjectingChanged(object sender, EventArgs e)
         {
             Dump("Video_EjectingChanged");
         }
 
-        private void Video_Ended(object sender, EventArgs e)
+        private static void Video_Ended(object sender, EventArgs e)
         {
             Dump("Video_Ended");
         }
 
-        private void Video_ErrorChanged(object sender, EventArgs e)
+        private static void Video_ErrorChanged(object sender, EventArgs e)
         {
             Dump("Video_ErrorChanged");
         }
 
-        private void Video_Forwarding(object sender, EventArgs e)
+        private static void Video_Forwarding(object sender, EventArgs e)
         {
             Dump("Video_Forwarding");
         }
 
-        private void Video_GuideLoadedChanged(object sender, EventArgs e)
+        private static void Video_GuideLoadedChanged(object sender, EventArgs e)
         {
             Dump("Video_GuideLoadedChanged");
         }
 
-        private void Video_MediaChanged(object sender, EventArgs e)
+        private static void Video_MediaChanged(object sender, EventArgs e)
         {
             Dump("Video_MediaChanged");
         }
 
-        private void Video_Pausing(object sender, EventArgs e)
+        private static void Video_Pausing(object sender, EventArgs e)
         {
             Dump("Video_Pausing");
         }
 
-        private void Video_Playing(object sender, EventArgs e)
+        private static void Video_Playing(object sender, EventArgs e)
         {
             Dump("Video_Playing");
         }
 
-        private void Video_Rewinding(object sender, EventArgs e)
+        private static void Video_Rewinding(object sender, EventArgs e)
         {
             Dump("Video_Rewinding");
         }
 
-        private void Video_Started(object sender, EventArgs e)
+        private static void Video_Started(object sender, EventArgs e)
         {
             Dump("Video_Started");
         }
 
-        private void Video_Stopping(object sender, EventArgs e)
+        private static void Video_Stopping(object sender, EventArgs e)
         {
             Dump("Video_Stopping");
         }
 
-        private void Video_TrackTimeChanged(object sender, EventArgs e)
+        private static void Video_TrackTimeChanged(object sender, EventArgs e)
         {
             Dump("Video_TrackTimeChanged");
         }

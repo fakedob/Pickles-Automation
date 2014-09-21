@@ -76,8 +76,8 @@ namespace USBIRToyv2
                         changelblFQ(tempFQ.ToString());
                         tempPR2 = PR2.GetPR2Code(tempFQ);
 
-                        //if (DBManager.CompareTwoKeys(tempKey, myRemoteKey.Value))
-                        //{
+                        if (DBManager.CompareTwoKeys(tempKey, myRemoteKey.Value))
+                        {
                             tempRemoteKey = myRemoteKey;
                             tempRemoteKey.Frequency = tempFQ;
                             tempRemoteKey.PR2Code = tempPR2;
@@ -86,11 +86,11 @@ namespace USBIRToyv2
                             {
                                 changeBtnAdd(true);
                             }
-                        //}
-                        //else
-                        //{
-                            //Reset();
-                        //}
+                        }
+                        else
+                        {
+                            Reset();
+                        }
                     }
                 }
                 last_key_received_time = DateTime.Now;
